@@ -1,0 +1,121 @@
+#include<iostream.h>
+#include<conio.h>
+#defineMAXSIZE10 
+class Queue {
+int arr [MAXSIZE];
+int front, rear;
+public: 
+Queue(){
+front=-1;
+rear=-1;
+}
+Void enqueue(int num)//Insert item in Queue
+{
+if(rear>=MAXSIZE){
+cout<<"\n Queue is FULL";
+}
+else
+{
+rear++;
+if(front==-1){ 
+front = rear;
+}
+arr[rear]=num;
+}
+}
+void delqueue(){ 
+int item; 
+if(front>rear)
+{
+cout<<"\n Queue is EMPTY ";
+}
+else
+{
+item=arr[front];
+cout<<"\n Item deleted is"<<item; 
+front++;
+}
+}
+void display(){ 
+
+int i = front;
+
+cout<<"\n Queue Elements\n"; if 
+
+(i == -1) {
+
+i= 0;
+
+}
+
+while(i<=rear){
+
+cout<<""<<arr[i]; 
+
+i++;
+
+}
+
+}
+
+};
+
+int main()
+
+{
+
+Queue Q1;
+
+int choice,item; 
+
+clrscr();
+
+do{
+
+cout<<"\n1.Insert item in Queue"; 
+
+cout<<"\n2.DeleteitemfromQueue"; 
+
+cout<<"\n3.DisplayQueueElement"; 
+
+cout<<"\n4.ExitProgram";
+
+cout<<"\n Enter your choice"; 
+
+cin>>choice;
+
+switch(choice){ 
+
+case1:
+
+cout<<"\n Enter item to be inserted:"; 
+
+cin>>item;
+
+Q1.enqueue(item); 
+
+break;
+
+case2:
+
+Q1.delqueue(); 
+
+break;
+
+case3:
+
+Q1.display(); 
+
+break;
+
+case4: 
+
+exit(1);
+
+}
+
+}while(1);
+
+return0;
+
+}
